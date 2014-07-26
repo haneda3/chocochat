@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  .jumbotron
+    .container
+      .panel.panel-body.panel-chat-main
+        ul#chat-area
+      .panel.panel-info
+        .panel-heading
+          .h4
+            span.label.label-info
+              span.glyphicon.glyphicon-user
+                UserName
+            ：#{username}
+        .panel-body
+          .col-lg-6
+            .input-group
+              span.input-group-addon
+                span.glyphicon.glyphicon-pencil
+              input#message.form-control(type="text", name="message" placeholder="メッセージ" autofocus)
+              span.input-group-btn
+                button#send.btn.btn-primary
+                  送信
+    input#username(type="hidden",value="#{username}")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+    script(src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
+    script(src="/socket.io/socket.io.js")
+    script(src="/javascripts/client.js")
